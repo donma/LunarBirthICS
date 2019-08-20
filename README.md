@@ -5,8 +5,10 @@ LunarBirthICS
 Demo: https://lunarbirth.azurewebsites.net/
 
 Snapshot:
+
 ![alt SampleResult](https://github.com/donma/LunarBirthICS/blob/master/lbics_demo2.jpg?raw=true)
 
 Use ICS in Windows Calendar :
+
 ![alt SampleResult](https://github.com/donma/LunarBirthICS/blob/master/lbics_demo1.jpg?raw=true)
 
