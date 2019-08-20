@@ -1,0 +1,109 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    label {
+        font-family: 'Microsoft JhengHei';
+    }
+</style>
+
+<div class="text-left" style="font-family:'Microsoft JhengHei'">
+    <form class="form-horizontal" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label class="col-md-12 control-label" for="month">您好，這是一個農曆的 ICS 產生器，主要是你可以指定一個農曆日期，
+                我會幫你產生推算出 @Html.Raw(DateTime.Now.Year)~2100 的西曆日期並且產出 ICS 檔案 ，
+                你可以輸入到你的 Outlook, Google, Apple 行事曆裡面，如果爸媽都是過農曆生日，然後常常說你根本忘記爸媽生日，用此產生尤佳 Enjoy :) </label>
+
+            </div>
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-12 control-label" for="month">農曆月</label>
+                <div class="col-md-12">
+                    <select id="month" name="month" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" >5</option>
+                        <option value="6" selected>6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-12 control-label" for="day">農曆日</label>
+                <div class="col-md-12">
+                    <select id="day" name="day" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" >5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21" selected>21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-12 control-label" for="title">標題</label>
+                <div class="col-md-12">
+                    <input id="title" name="title" type="text" placeholder="父親生日" maxlength="20" class="form-control input-md" value="父親生日">
+
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-12 control-label" for="textarea">提示內文</label>
+                <div class="col-md-12">
+                    <textarea class="form-control" id="textarea" maxlength="30" name="context">慶祝一下</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button class="btn  btn-sm" style="background-color:black;color:white;" onclick="Splash1()" id="btnDownload" asp-page-handler="Download"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;下載 ICS </button>
+                </div>
+            </div>
+</fieldset>
+    </form>
+
+    @Html.Raw(Model.CustomScript)
+
+</div>
